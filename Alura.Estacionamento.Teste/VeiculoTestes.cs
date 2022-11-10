@@ -18,8 +18,11 @@ namespace Alura.Estacionamento.Teste
         [Fact]
         public void TestaVeiculoFrear()
         {
+            //Arrange
             var veiculo = new Veiculo();
+            //Act
             veiculo.Frear(10);
+            //Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
     }
