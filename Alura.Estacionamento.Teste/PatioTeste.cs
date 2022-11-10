@@ -16,11 +16,11 @@ namespace Alura.Estacionamento.Teste
             //Arrange
             var estacionamento = new Patio();
             var veiculo = new Veiculo();
-            veiculo.Proprietario = "Claudio Ribeiro";
+            veiculo.Proprietario = "Joao Ribeiro";
             veiculo.Tipo = TipoVeiculo.Automovel;
             veiculo.Cor = "Prata";
             veiculo.Modelo = "Celta";
-            veiculo.Placa = "DSM-8637";
+            veiculo.Placa = "AAA-2022";
 
             estacionamento.RegistrarEntradaVeiculo(veiculo);
             estacionamento.RegistrarSaidaVeiculo(veiculo.Placa);
