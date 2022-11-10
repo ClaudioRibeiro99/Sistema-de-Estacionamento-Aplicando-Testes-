@@ -25,5 +25,11 @@ namespace Alura.Estacionamento.Teste
             //Assert
             Assert.Equal(-150, veiculo.VelocidadeAtual);
         }
+
+        [Fact(Skip ="Teste ainda não implementado. Ignorar")]
+        public void ValidaNomeProprietario()
+        {
+
+        }
     }
 }
