@@ -4,7 +4,7 @@ namespace Alura.Estacionamento.Teste
 {
     public class VeiculoTestes
     {
-        [Fact]
+        [Fact(DisplayName ="Teste n. 1")]
         public void TestaVeiculoAcelerar()
         {
             //Arrange
@@ -15,7 +15,7 @@ namespace Alura.Estacionamento.Teste
             Assert.Equal(100, veiculo.VelocidadeAtual);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Teste n. 2")]
         public void TestaVeiculoFrear()
         {
             //Arrange
