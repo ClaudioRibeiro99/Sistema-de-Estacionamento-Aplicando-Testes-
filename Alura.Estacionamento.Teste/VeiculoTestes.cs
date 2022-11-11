@@ -4,7 +4,7 @@ using Xunit.Abstractions;
 
 namespace Alura.Estacionamento.Teste
 {
-    public class VeiculoTestes
+    public class VeiculoTestes : IDisposable
     {
         private Veiculo veiculo;
         public ITestOutputHelper SaidaConsoleTeste;
@@ -59,6 +59,11 @@ namespace Alura.Estacionamento.Teste
 
             //Assent
             Assert.Contains("Ficha do veículo", dados);
+        }
+
+        public void Dispose()
+        {
+            SaidaConsoleTeste.WriteLine("Dispose invocado.");
         }
     }
 }
