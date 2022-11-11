@@ -1,11 +1,20 @@
 using Alura.Estacionamento.Alura.Estacionamento.Modelos;
 using Alura.Estacionamento.Modelos;
+using Xunit.Abstractions;
 
 namespace Alura.Estacionamento.Teste
 {
     public class VeiculoTestes
     {
-        
+        private Veiculo veiculo;
+        public ITestOutputHelper SaidaConsoleTeste;
+        public VeiculoTestes(ITestOutputHelper _saidaConsoleTeste)
+        {
+            SaidaConsoleTeste = _saidaConsoleTeste;
+            SaidaConsoleTeste.WriteLine("Construtor invocado.");
+            veiculo = new Veiculo();
+        }
+
         [Fact]
         public void TestaVeiculoAcelerarComParametro10()
         {
@@ -21,7 +30,7 @@ namespace Alura.Estacionamento.Teste
         public void TestaVeiculoFrearComParametro10()
         {
             //Arrange
-            var veiculo = new Veiculo();
+            //var veiculo = new Veiculo();
             //Act
             veiculo.Frear(10);
             //Assert
@@ -38,15 +47,15 @@ namespace Alura.Estacionamento.Teste
         public void FichaDeInformacaoDoVeiculo()
         {
             //Arrange
-            var carro = new Veiculo();
-            carro.Proprietario = "Claudio Ribeiro";
-            carro.Tipo = TipoVeiculo.Automovel;
-            carro.Placa = "DSQ-8304";
-            carro.Cor = "Branco";
-            carro.Modelo = "Corsa";
+            //var veiculo = new Veiculo();
+            veiculo.Proprietario = "Claudio Ribeiro";
+            veiculo.Tipo = TipoVeiculo.Automovel;
+            veiculo.Placa = "DSQ-8304";
+            veiculo.Cor = "Branco";
+            veiculo.Modelo = "Corsa";
 
             //Act
-            string dados = carro.ToString();
+            string dados = veiculo.ToString();
 
             //Assent
             Assert.Contains("Ficha do veículo", dados);
