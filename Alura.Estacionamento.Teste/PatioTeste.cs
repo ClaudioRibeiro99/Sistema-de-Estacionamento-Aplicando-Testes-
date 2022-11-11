@@ -12,6 +12,7 @@ namespace Alura.Estacionamento.Teste
     public class PatioTeste : IDisposable
     {
         private Veiculo veiculo;
+        private Operador operador;
         public ITestOutputHelper SaidaConsoleTeste;
 
         public PatioTeste(ITestOutputHelper _saidaConsoleTeste)
@@ -19,6 +20,8 @@ namespace Alura.Estacionamento.Teste
             SaidaConsoleTeste = _saidaConsoleTeste;
             SaidaConsoleTeste.WriteLine("Construtor invocado.");
             veiculo = new Veiculo();
+            operador = new Operador();
+            operador.Nome = "Alberto Souza";
         }
 
         [Fact]
@@ -26,6 +29,10 @@ namespace Alura.Estacionamento.Teste
         {
             //Arrange
             var estacionamento = new Patio();
+            //Operador operador = new Operador();
+            //operador.Nome = "Alberto Souza";
+
+            estacionamento.OperadorPatio = operador;
             //var veiculo = new Veiculo();
             veiculo.Proprietario = "Joao Ribeiro";
             veiculo.Tipo = TipoVeiculo.Automovel;
@@ -56,6 +63,7 @@ namespace Alura.Estacionamento.Teste
         {
             //Arrange
             Patio estacionamento = new Patio();
+            estacionamento.OperadorPatio = operador;
             //var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
@@ -80,6 +88,7 @@ namespace Alura.Estacionamento.Teste
         {
             //Arrange
             Patio estacionamento = new Patio();
+            estacionamento.OperadorPatio = operador;
             //var veiculo = new Veiculo();
             veiculo.Proprietario = proprietario;
             veiculo.Placa = placa;
@@ -95,10 +104,11 @@ namespace Alura.Estacionamento.Teste
         }
 
         [Fact]
-        public void AlterarDadosVeiculoDoProprioVeiculo()
+        public void AlterarDadosDoProprioVeiculo()
         {
             //Arrange
             Patio estacionamento = new Patio();
+            estacionamento.OperadorPatio = operador;
             //var veiculo = new Veiculo();
             veiculo.Proprietario = "Gabriel Santana";
             veiculo.Placa = "GGG-3333";
